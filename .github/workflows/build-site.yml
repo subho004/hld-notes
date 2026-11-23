@@ -1,0 +1,19 @@
+name: Rebuild site
+on:
+  push:
+    branches: [main]
+    paths: ['**/*.md', 'site-src/**']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 site-src/build_site.py
+      - name: Commit regenerated index.html
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html .nojekyll
+          git diff --cached --quiet || git commit -m "Rebuild site from notes" && git push
