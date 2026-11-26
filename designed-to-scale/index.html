@@ -90,5 +90,17 @@
         <p>An interactive system design course: each idea is an animated diagram you step through. It needs JavaScript to run — please turn it on and reload.</p>
       </div>
     </noscript>
-  </body>
+  <script type="module">
+      /* lesson cards in the course overview open the lesson in the app above */
+      document.getElementById('course-overview')?.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#/"]');
+        if (!a) return;
+        e.preventDefault();
+        const hash = a.getAttribute('href');
+        if (location.hash === hash) window.dispatchEvent(new HashChangeEvent('hashchange'));
+        else location.hash = hash;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    </script>
+</body>
 </html>

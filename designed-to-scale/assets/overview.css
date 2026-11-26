@@ -4,3 +4,6 @@
 html{height:auto;overflow-y:auto}
 body{height:auto;min-height:100%;overflow:visible}
 #app{height:100vh;height:100dvh;position:relative}
+
+/* hide the "designed by" credit (topbar and mobile drawer) */
+.credit{display:none!important}
