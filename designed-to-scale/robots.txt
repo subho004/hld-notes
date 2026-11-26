@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://designed-to-scale.vercel.app/sitemap.xml

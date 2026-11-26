@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Page not found · System Design</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid;
+        place-items: center;
+        background: #f4ebe0;
+        color: #1d1b18;
+        font: 600 15px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      @media (prefers-color-scheme: dark) {
+        body { background: #211e1a; color: #efe6d6; }
+        a { box-shadow: 1.5px 2.5px 0 #050403 !important; }
+      }
+      main { padding: 24px; text-align: center; }
+      svg { width: 64px; height: 64px; }
+      h1 { margin: 18px 0 6px; font-size: 26px; letter-spacing: -0.02em; }
+      p { margin: 0 0 22px; opacity: 0.7; }
+      a {
+        display: inline-block;
+        padding: 9px 18px;
+        border: 1.5px solid #1d1b18;
+        border-radius: 8px;
+        background: #cfe3b2;
+        color: #1d1b18;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 1.5px 2.5px 0 #1d1b18;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 10.6V15.4M8.2 19.4V15.4H23.8V18.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="2 2.4"/>
+        <rect x="9" y="2.4" width="14" height="8.6" rx="2.6" fill="#fcd4ad" stroke="currentColor" stroke-width="1.8"/>
+        <rect x="2" y="19.4" width="12.4" height="9" rx="2.6" fill="#a9c5e8" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M18 20.4V27.2A5.8 2.2 0 0 0 29.6 27.2V20.4Z" fill="#cbbae6"/>
+        <ellipse cx="23.8" cy="20.4" rx="5.8" ry="2.2" fill="#ece4f6"/>
+        <path d="M18 20.4V27.2A5.8 2.2 0 0 0 29.6 27.2V20.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <ellipse cx="23.8" cy="20.4" rx="5.8" ry="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      </svg>
+      <h1>404 · no route to host</h1>
+      <p>This page doesn’t exist — but the course does.</p>
+      <a href="/">Back to the course</a>
+    </main>
+  </body>
+</html>

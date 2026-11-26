@@ -79,6 +79,11 @@ def build_tree(chapters):
                 continue
             rel = e.relative_to(ROOT).as_posix()
             if e.is_dir():
+                if e.name == "designed-to-scale" and d == ROOT:
+                    count = sum(1 for _ in e.rglob("*") if _.is_file())
+                    out.append({"n": e.name, "t": "d", "k": [], "h": "designed-to-scale/index.html",
+                                "note": f"{count} files, separate sub page (own index.html)"})
+                    continue
                 out.append({"n": e.name, "t": "d", "k": walk(e)})
             else:
                 node = {"n": e.name, "t": "f", "s": e.stat().st_size}
@@ -98,6 +103,8 @@ def main():
         "chapters": chapters,
         "readme": read(ROOT / "Readme.md") if (ROOT / "Readme.md").exists() else "",
         "tree": build_tree(chapters),
+        "explorer": {"title": "Designed to Scale", "href": "designed-to-scale/index.html"}
+        if (ROOT / "designed-to-scale/index.html").exists() else None,
     }
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     payload = payload.replace("</", "<\\/").replace("<!--", "<\\!--")

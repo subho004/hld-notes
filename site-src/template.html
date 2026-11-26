@@ -475,6 +475,7 @@ function renderNav(route) {
   let h = '<a class="item' + (route.kind === 'home' ? ' on' : '') + '" href="#/"><span class="num">&#8962;</span>Home</a>';
   h += '<a class="item' + (route.kind === 'extras' ? ' on' : '') + '" href="#/extras"><span class="num">+</span>Extras</a>';
   h += '<a class="item' + (route.kind === 'repo' ? ' on' : '') + '" href="#/repo"><span class="num">&#9776;</span>Browse the repo</a>';
+  if (D.explorer) h += '<a class="item" href="' + D.explorer.href + '"><span class="num">&#8599;</span>' + esc(D.explorer.title) + '</a>';
   let part = null;
   D.chapters.forEach(c => {
     if (c.part !== part) { part = c.part; h += '<h5>' + esc(part) + '</h5>'; }
@@ -539,6 +540,7 @@ function pageHome() {
       '<p>' + esc(c.tagline) + '</p></a>';
   });
   h += '</div><div class="section-h">Also here</div><div class="grid">' +
+    (D.explorer ? '<a class="card cardlink" href="' + D.explorer.href + '"><div class="top"><span class="badge">&#8599;</span><h3>' + esc(D.explorer.title) + '</h3></div><p>40 animated system design lessons: load balancing, caching, sharding, and full designs.</p></a>' : '') +
     '<a class="card cardlink" href="#/repo"><div class="top"><span class="badge">&#9776;</span><h3>Browse the repo</h3></div><p>Every folder and file in one tree.</p></a>' +
     '<a class="card cardlink" href="#/extras"><div class="top"><span class="badge">+</span><h3>Extras</h3></div><p>The repository README and the reference links behind these notes.</p></a></div>';
   root.innerHTML = h;
