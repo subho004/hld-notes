@@ -9,3 +9,4 @@ https://github.com/aasthas2022/SDE-Interview-and-Prep-Roadmap
 
 https://www.techinterviewhandbook.org/
 https://github.com/yangshun/tech-interview-handbook
+https://github.com/perixtar/Tech-OA-Interview-Questions
